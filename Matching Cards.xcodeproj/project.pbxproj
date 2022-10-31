@@ -43,6 +43,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A2D4553029106EF7007D98BC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A2E0E7D929097DF6008CD5C1 /* Card.swift */,
+				A2E0E7D729097C79008CD5C1 /* CardModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A2D4553129106F4E007D98BC /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A2E0E76C29097199008CD5C1 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A2D4553229106FB6007D98BC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A2E0E7DB29098635008CD5C1 /* CardCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		A2E0E75C29097199008CD5C1 = {
 			isa = PBXGroup;
 			children = (
@@ -62,12 +87,11 @@
 		A2E0E76729097199008CD5C1 /* Matching Cards */ = {
 			isa = PBXGroup;
 			children = (
+				A2D4553229106FB6007D98BC /* View */,
+				A2D4553129106F4E007D98BC /* ViewControllers */,
+				A2D4553029106EF7007D98BC /* Models */,
 				A2E0E76829097199008CD5C1 /* AppDelegate.swift */,
 				A2E0E76A29097199008CD5C1 /* SceneDelegate.swift */,
-				A2E0E76C29097199008CD5C1 /* ViewController.swift */,
-				A2E0E7D929097DF6008CD5C1 /* Card.swift */,
-				A2E0E7D729097C79008CD5C1 /* CardModel.swift */,
-				A2E0E7DB29098635008CD5C1 /* CardCollectionViewCell.swift */,
 				A2E0E76E29097199008CD5C1 /* Main.storyboard */,
 				A2E0E77129097199008CD5C1 /* Assets.xcassets */,
 				A2E0E77329097199008CD5C1 /* LaunchScreen.storyboard */,
