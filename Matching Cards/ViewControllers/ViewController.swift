@@ -18,7 +18,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     var cardsArray = [Card]()
     
     var timer: Timer?
-    var milliseconds: Int = 10 * 1000
+    var milliseconds: Int = 30 * 1000
     
     var firstFlippedCardIndex: IndexPath?
     
@@ -100,6 +100,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        // Check if there is any time remaining. Don't let the user interact if the time is 0
+        if milliseconds <= 0 {
+            return
+        }
         
         // Get a reference to the cell that was tapped
         let cell = collectionView.cellForItem(at: indexPath) as? CardCollectionViewCell
