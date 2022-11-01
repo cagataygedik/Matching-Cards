@@ -22,6 +22,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     var firstFlippedCardIndex: IndexPath?
     
+    var soundPlayer = SoundManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,6 +37,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timerFired), userInfo: nil, repeats: true)
         RunLoop.main.add(timer!, forMode: .common)
         
+        
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        // Play shuffle sound
+        soundPlayer.playSound(effect: .shuffle)
     }
     
     // MARK: - Timer Methods
@@ -101,6 +111,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             // Flip the card up
             cell?.flipUp()
             
+            // Play flip sound
+            soundPlayer.playSound(effect: .flip)
+            
             // Check if this is the first card that was flipped or the second one
             
             if firstFlippedCardIndex == nil {
@@ -136,6 +149,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             
             // It's a match
             
+            // Play match sound
+            soundPlayer.playSound(effect: .match)
+            
             // Set the status and remove them
             cardOne.isMatched = true
             cardTwo.isMatched = true
@@ -151,6 +167,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             // It's not a match
             cardOne.isFlipped = false
             cardTwo.isFlipped = false
+            
+            // Play not a match sound
+            soundPlayer.playSound(effect: .nomatch)
             
             // Flip them back over
             cardOneCell?.flipDown()
